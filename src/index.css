@@ -1,3 +1,11 @@
+@import "./style/button.css";
+@import "./style//typography.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/**
+    base == h1 h2, h3 .... base layer generally contain tags
+
+    components === components are in the components layer 
+**/

@@ -1,12 +1,16 @@
 import "./App.css";
-import MainLayout from "./components/layout/MainLayout";
+import Button from "./components/ui/Button";
+import Container from "./components/ui/Container";
+// import MainLayout from "./components/layout/MainLayout";
 
 function App() {
   return (
     <>
-      <div>
-        <MainLayout />
-      </div>
+      <Container>
+        <div className="h-screen w-full flex justify-center items-center">
+          <Button className="bg-blue-500" outline />
+        </div>
+      </Container>
     </>
   );
 }
