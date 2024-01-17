@@ -8,7 +8,13 @@ function App() {
     <>
       <Container>
         <div className="h-screen w-full flex justify-center items-center">
-          <Button className="bg-blue-500" outline />
+          <Button
+            variant="ghost"
+            className="w-[500px]"
+            // outline
+          >
+            Click
+          </Button>
         </div>
       </Container>
     </>

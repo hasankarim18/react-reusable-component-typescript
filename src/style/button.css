@@ -1,13 +1,27 @@
 @layer components {
-  .btn {
+  .btn-solid {
     @apply px-2 py-3;
     @apply rounded-lg;
-  }
-  .btn-primary {
     @apply bg-purple-400 hover:bg-purple-600;
+    @apply font-semibold;
+    @apply text-white;
+    @apply transition-all;
+  }
+  .btn-outline {
+    @apply px-2 py-3;
+    @apply rounded-lg;
+    @apply bg-purple-400 hover:bg-purple-600 border-2 border-green-400;
+    @apply font-semibold;
+    @apply text-white;
+    @apply transition-all;
   }
 
-  .btn-danger {
-    @apply bg-rose-400 hover:bg-rose-600;
+  .btn-ghost {
+    @apply px-2 py-3;
+    @apply rounded-lg;
+    @apply bg-gray-700 hover:bg-gray-800 border-2;
+    @apply font-semibold;
+    @apply text-white;
+    @apply transition-all;
   }
 }

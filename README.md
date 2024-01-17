@@ -1,30 +1,49 @@
-# React + TypeScript + Vite
+## React Reusable component with Tailwind CSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#### Plugin used
 
-Currently, two official plugins are available:
+- twMerge
+- clsx
+- cn utility function is used to write twMerge and clsx. clsx is used inside twMerge
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+import { twMerge } from "tailwind-merge";
+import { clsx, ClassValue } from "clsx";
 
-## Expanding the ESLint configuration
+// cn function for react-tailwind+typescript-- for js type ClassValue[] will be omited
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+const cn = (...inputs: ClassValue[]) => {
+  return twMerge(clsx(inputs));
+};
 
-- Configure the top-level `parserOptions` property like this:
+export default cn;
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### React reusable component
+
+- Combining react reusable component with the `twMerge` and `clsx` from **cn** function
+
+```
+import cn from "../../utils/cn";
+
+
+const Button = ({ className, outline }) => {
+  return (
+    <button
+      className={cn(
+        "btn",
+        {
+          "border-2 border-red-400": outline,
+        },
+        className
+      )}
+    >
+      Click
+    </button>
+  );
+};
+
+export default Button;
+
+```
