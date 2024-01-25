@@ -1,0 +1,8 @@
+@layer components {
+  .input-field {
+    @apply input input-bordered;
+  }
+  .input-full {
+    @apply input input-bordered w-full border-gray-300 focus:border-purple-400 focus:outline-none focus:ring-1 focus:ring-purple-500;
+  }
+}
